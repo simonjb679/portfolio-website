@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Simon’s Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"> <!-- Sets character encoding -->
+  <title>Simon Benitez | Portfolio</title> <!-- Title shown in browser tab -->
+  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 </head>
 <body>
-  <h1>Welcome to My Portfolio</h1>
 
-  <script src="script.js"></script>
+  <!-- Hero section contains profile image, name, and bio -->
+  <section class="hero">
+
+    <!-- Circular wrapper that zooms and crops image -->
+    <div class="profile-pic-wrapper">
+      <img src="images/pfp.png" alt="Simon Benitez headshot" class="profile-pic">
+    </div>
+
+    <!-- Your name -->
+    <h1>Simon Benitez</h1>
+
+    <!-- Your personal bio -->
+    <p class="bio">
+      I’m a computer science student focused on system-level problem solving and digital infrastructure.
+      Lately, I’ve been exploring Linux internals, system recovery, and the fundamentals of ethical hacking — 
+      diving into how secure systems are built, exploited, and hardened.
+    </p>
+
+  </section>
+
+  <!-- Skills section with logos -->
+  <section class="skills">
+    <h2>Languages</h2>
+    <div class="icons">
+      <img src="images/python-logo.png" alt="Python">
+      <img src="images/java-logo.png" alt="Java">
+      <img src="images/html5-logo.png" alt="HTML5">
+      <img src="images/css3-logo.png" alt="CSS3">
+    </div>
+  </section>
+
 </body>
 </html>
