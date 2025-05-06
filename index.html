@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- Sets character encoding -->
-  <title>Simon Benitez | Portfolio</title> <!-- Title shown in browser tab -->
-  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <title>Simon Benitez | Portfolio</title> <!-- Title in browser tab -->
+  
+  <!-- Import Poppins font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Link to your external stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Hero section contains profile image, name, and bio -->
+  <!-- Hero section with grid layout (image left, text right) -->
   <section class="hero">
+    <div class="hero-grid">
+      
+      <!-- Left column: full-body image -->
+      <div class="hero-image">
+        <img src="images/MyBodyv2.png" alt="Simon Benitez" class="profile-pic">
+      </div>
 
-    <!-- Circular wrapper that zooms and crops image -->
-    <div class="profile-pic-wrapper">
-      <img src="images/pfp.png" alt="Simon Benitez headshot" class="profile-pic">
+      <!-- Right column: name and bio -->
+      <div class="hero-text">
+        <h1>Simon Benitez</h1>
+        <p class="bio">
+          I’m a computer science student focused on system-level problem solving and digital infrastructure.
+          Lately, I’ve been exploring Linux internals, system recovery, and the fundamentals of ethical hacking — 
+          diving into how secure systems are built, exploited, and hardened.
+        </p>
+      </div>
     </div>
-
-    <!-- Your name -->
-    <h1>Simon Benitez</h1>
-
-    <!-- Your personal bio -->
-    <p class="bio">
-      I’m a computer science student focused on system-level problem solving and digital infrastructure.
-      Lately, I’ve been exploring Linux internals, system recovery, and the fundamentals of ethical hacking — 
-      diving into how secure systems are built, exploited, and hardened.
-    </p>
-
   </section>
 
-  <!-- Skills section with logos -->
+  <!-- Skills section with technology logos -->
   <section class="skills">
     <h2>Languages</h2>
     <div class="icons">

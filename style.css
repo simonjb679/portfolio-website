@@ -1,91 +1,117 @@
-/* Base page styles */
+/* === Global Page Styles === */
 body {
-    margin: 0; /* Remove default margin around the page */
-    font-family: 'Segoe UI', sans-serif; /* Use a clean, readable font */
-    background-color: #000; /* Solid black background */
-    color: #fff; /* Default text color */
-    text-align: center; /* Center content horizontally */
+  margin: 0; /* Remove default margin */
+  font-family: 'Poppins', sans-serif; /* Clean modern font */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+/* === Fade-in Animation for Hero Section === */
+.hero {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide in from below */
   }
-  
-  /* Hero section containing profile image, name, and bio */
-  .hero {
-    padding-top: 120px; /* Add space from top of screen */
-    padding-bottom: 60px; /* Add space below the section */
-    position: relative; /* Needed for positioning content within */
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Normal position */
   }
-  
-  /* Circular wrapper that crops the zoomed image */
-  .profile-pic-wrapper {
-    width: 180px; /* Fixed size of circle */
-    height: 180px;
-    border-radius: 50%; /* Makes the wrapper a circle */
-    overflow: hidden; /* Clips the image inside the circle */
-    margin: 0 auto 20px; /* Center horizontally, add space below */
-    border: 3px solid #fff; /* White border around the image */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25); /* Soft glow */
-    position: relative; /* For absolute positioning of the image inside */
-  }
-  
-  /* The actual image inside the circle */
-  .profile-pic {
-    position: absolute; /* Allows manual placement */
-    top: -47px; /* Moves the image up */
-    left: -49px; /* Moves the image left (adjust to center your face) */
-    width: 288px; /* Larger than wrapper for zoom effect */
-    height: 288px;
-    object-fit: cover; /* Zoom + crop image inside circle */
-  }
-  
-  /* Name styling */
-  h1 {
-    font-size: 2.8rem; /* Large font size */
-    font-weight: 700; /* Bold text */
-    color: #fff; /* White text color */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Subtle white glow */
-    margin-bottom: 20px; /* Space below name */
-  }
-  
-  /* Bio paragraph styling */
-  .bio {
-    font-size: 1.1rem; /* Slightly larger text for readability */
-    max-width: 600px; /* Restrict paragraph width for nice reading */
-    margin: 0 auto; /* Center the bio block */
-    line-height: 1.6; /* Vertical line spacing */
-    color: #ccc; /* Soft gray for better contrast */
-    padding: 0 20px; /* Side padding on smaller screens */
-  }
-  
-  /* Skills section container */
-  .skills {
-    padding: 40px 20px; /* Space around the section */
-    background-color: #111; /* Dark gray background */
-  }
-  
-  /* Skills heading styling */
-  .skills h2 {
-    color: #fff; /* White text */
-    font-size: 1.8rem; /* Section header size */
-    margin-bottom: 20px; /* Space below heading */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle glow */
-  }
-  
-  /* Container for skill icons */
-  .icons {
-    display: flex; /* Flex layout for horizontal row */
-    justify-content: center; /* Center horizontally */
-    gap: 30px; /* Spacing between logos */
-    flex-wrap: wrap; /* Wrap icons on smaller screens */
-  }
-  
-  /* Individual skill icon styling */
-  .icons img {
-    width: 60px; /* Icon size */
-    height: 60px;
-    transition: transform 0.2s ease; /* Smooth scale effect */
-  }
-  
-  /* Hover effect for icons */
-  .icons img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-  }
-  
+}
+
+/* === Grid Layout for Hero Section === */
+.hero-grid {
+  display: grid; /* Two-column layout */
+  grid-template-columns: 1fr 1fr;
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Full viewport height */
+  padding: 40px;
+  gap: 24px; /* Space between image and text */
+}
+
+/* === Hero Image Container === */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: visible; /* Allow zoom to extend outside */
+}
+
+/* === Profile Picture Styling === */
+.profile-pic {
+  width: 100%; /* Fill container */
+  max-height: none; /* No vertical limit */
+  object-fit: contain;
+  display: block;
+  transform: scale(1.07); /* Slight zoom */
+  transform-origin: bottom center; /* Zoom from base */
+  filter: drop-shadow(0 0 12px rgba(109, 108, 108, 0.15)); /* Soft shadow */
+}
+
+/* === Right-Side Text Layout === */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Name Styling === */
+h1 {
+  font-size: 8.5rem; /* Huge and bold */
+  font-weight: 800;
+  color: #fff;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4); /* Strong layered glow */
+  margin-bottom: 20px;
+}
+
+/* === Bio Text Styling === */
+.bio {
+  font-size: 2.3rem; /* Large readable text */
+  max-width: 600px;
+  line-height: 1.6;
+  color: #eee;
+  padding: 0 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15); /* Soft glow */
+}
+
+/* === Skills Section Background === */
+.skills {
+  padding: 40px 20px;
+  background-color: #111; /* Slightly lighter black */
+}
+
+/* === Skills Header === */
+.skills h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle glow */
+}
+
+/* === Icon Grid === */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Responsive wrapping */
+}
+
+/* === Icon Styling === */
+.icons img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s ease; /* Smooth hover */
+}
+
+.icons img:hover {
+  transform: scale(1.1); /* Zoom on hover */
+}
